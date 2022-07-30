@@ -31,6 +31,7 @@ class BaseModel:
         storage.new(self)
 
     def __str__(self):
+        """returns an informal representation of an instance"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
