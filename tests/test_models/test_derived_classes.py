@@ -98,7 +98,6 @@ class TestUser(unittest.TestCase):
 
         self.check_object(Marriott_Review, "Review.Marriott_Review")
 
-
     def test_State(self):
         """tests the State class"""
         Hawaii = State()

@@ -255,7 +255,8 @@ class TestHBNBCommand(unittest.TestCase):
             self.check_message('Amenity.create()', 'MontBourda')
         key = 'Amenity.MontBourda'
         self.check_message(
-            'Amenity.update("MontBourda", {"area": 23.6, "has_sea": True})', "")
+            'Amenity.update("MontBourda", {"area": 23.6, "has_sea": True})',
+            "")
         self.assertEqual(all()[key]['area'], 23.6)
         self.assertIs(type(all()[key]['area']), float)
         self.assertEqual(all()[key]['has_sea'], True)
