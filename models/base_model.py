@@ -3,7 +3,7 @@
 
 from datetime import datetime
 import uuid
-from .__init__ import storage
+from models.__init__ import storage
 
 
 class BaseModel:
@@ -14,8 +14,7 @@ class BaseModel:
         Sets:
             a unique id to each object,
             the time each object was created,
-            the time an object gets updated
-        """
+            the time an object gets updated"""
         if len(kwargs) > 0:
             kwargs['created_at'] = datetime.fromisoformat(kwargs['created_at'])
             kwargs['updated_at'] = datetime.fromisoformat(kwargs['updated_at'])
@@ -28,8 +27,6 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
 
-        storage.new(self)
-
     def __str__(self):
         """returns an informal representation of an instance"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
@@ -37,6 +34,7 @@ class BaseModel:
     def save(self):
         """updates updated_at with the current datetime"""
         self.updated_at = datetime.now()
+        storage.new(self)
         storage.save()
 
     def to_dict(self):

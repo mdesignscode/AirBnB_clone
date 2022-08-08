@@ -34,3 +34,17 @@ class TestFileStorage(unittest.TestCase):
         self.storage.reload()
         objects = self.storage.all()
         self.assertTrue(objects.items() == data.items())
+
+    def test_destroy_method(self):
+        """tests the destroy method"""
+        my_model = BaseModel()
+        my_model.name = "Andromeda"
+        my_model.type = "Galaxy"
+        my_model.distance_from_earth = "4.2 light years"
+
+        my_model.save()
+        self.storage.reload()
+        self.storage.destroy(f'BaseModel.{my_model.id}')
+        all = self.storage.all()
+
+        self.assertFalse(all.__contains__(f'BaseModel.{my_model.id}'))

@@ -3,6 +3,7 @@
 
 import json
 import unittest
+from os import remove
 
 from datetime import datetime
 from models.base_model import BaseModel
@@ -13,9 +14,17 @@ class TestBaseModel(unittest.TestCase):
     """Testing the BaseModel class"""
 
     def setUp(self):
+        """test object for all tests"""
         self.my_model = BaseModel()
         self.my_model.name = "First_Model"
         self.my_model.my_number = 98
+
+    def tearDown(self):
+        """destroy test object for all tests"""
+        try:
+            remove('file.json')
+        except FileNotFoundError:
+            pass
 
     def test_initialization(self):
         """tests the initialization of class"""
