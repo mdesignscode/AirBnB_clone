@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica Arial, sans-serif;
+}
+
+.container {
+    max-width: 1000px;
+    margin-block: 30px;
+    margin-inline: auto;
+    position: relative;
+}
+
+@media (max-width: 1040px) {
+    .container {
+        width: 95%;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .filters .locations,
+    .filters .amenities {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 15em;
+    }
+}
+
+@media (max-width: 600px) {
+    article {
+        width: 80vw !important;
+    }
+
+    .popover {
+        margin-top: 1em !important;
+    }
+
+    .places h1 {
+        position: relative !important;
+        top: 0 !important;
+    }
+
+    .filters {
+        height: 18em !important;
+        width: 70vw !important;
+        flex-direction: column;
+        margin-inline: auto;
+        position: relative;
+    }
+
+    .name_and_price {
+        height: 7em !important;
+    }
+
+    .name_and_price h2 {
+        margin: 0 !important;
+    }
+
+    .price_by_night {
+        right: 100% !important;
+        left: 36% !important;
+        top: 50% !important;
+    }
+
+    .filters .locations,
+    .filters .amenities {
+        flex: 0 0 auto;
+        width: 100% !important;
+        height: 34% !important;
+    }
+
+    .filters .locations {
+        border-bottom: 1px solid #DDDDDD;
+        border-right: none !important;
+    }
+
+    .places h1 {
+        top: .8em !important;
+    }
+
+    .filters {
+        margin-bottom: .6em !important;
+    }
+
+    button {
+        bottom: 1em;
+        left: 30%;
+        width: 40% !important;
+    }
+
+    .information {
+        height: 7em !important;
+    }
+
+    .information span {
+        padding-top: 4em !important;
+    }
+}

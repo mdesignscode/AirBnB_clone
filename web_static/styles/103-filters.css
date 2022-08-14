@@ -11,14 +11,14 @@
 
 button {
     font-size: 18px;
-    background: #ff5a5f;
+    background: hsl(358, 100%, 40%);
     color: #FFFFFF;
     height: 48px;
     width: 20%;
     border: none;
     border-radius: 4px;
-    position: relative;
-    right: -260px;
+    position: absolute;
+    right: 1.4em;
 }
 
 button:hover {
